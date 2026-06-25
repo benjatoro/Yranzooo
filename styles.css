@@ -1,46 +1,466 @@
-* {
-  box-sizing: border-box;
+/* =====================
+   RESET Y BASE
+   ===================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  color: black;
-  background-color: white;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #222;
+    line-height: 1.6;
 }
 
+/* =====================
+   NAVEGACIÓN
+   ===================== */
 nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem;
-  gap: 0.5rem;
-  border-bottom: solid 1px #aaa;
-  background-color: #eee;
+    background-color: #1a1a2e;
+    padding: 14px 24px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-nav a {
-  display: inline-block;
-  min-width: 9rem;
-  padding: 0.5rem;
-  border-radius: 0.2rem;
-  border: solid 1px #aaa;
-  text-align: center;
-  text-decoration: none;
-  color: #555;
+nav a,
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
 }
 
-nav a[aria-current='page'] {
-  color: #000;
-  background-color: #d4d4d4;
+nav a,
+nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background 0.2s;
 }
 
+nav a:hover,
+nav ul li a:hover,
+nav a.activo {
+    background-color: #4a90d9;
+    color: #fff;
+}
+
+/* =====================
+   HEADER
+   ===================== */
+header {
+    background-color: #1a1a2e;
+    color: #fff;
+    padding: 24px 32px;
+    border-bottom: 3px solid #4a90d9;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* =====================
+   MAIN
+   ===================== */
 main {
-  padding: 1rem;
+    max-width: 1100px;
+    margin: 32px auto;
+    padding: 0 24px;
 }
 
+/* =====================
+   TÍTULOS
+   ===================== */
 h1 {
-  font-weight: bold;
-  font-size: 1.5rem;
+    font-size: 1.8rem;
+    color: #1a1a2e;
+    margin-bottom: 20px;
+    border-left: 5px solid #4a90d9;
+    padding-left: 12px;
+}
+
+h2 {
+    font-size: 1.3rem;
+    color: #1a1a2e;
+    margin: 24px 0 12px;
+}
+
+h2.principal {
+    font-size: 1.7rem;
+    border-left: 5px solid #4a90d9;
+    padding-left: 12px;
+    margin: 36px 0 16px;
+    color: #1a1a2e;
+}
+
+h2.subtitulo {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.05rem;
+    color: #333;
+    margin: 16px 0 8px;
+}
+
+/* =====================
+   SECCIONES
+   ===================== */
+section {
+    margin-bottom: 40px;
+}
+
+p {
+    margin-bottom: 12px;
+    color: #444;
+}
+
+ul {
+    padding-left: 20px;
+    margin-bottom: 12px;
+}
+
+li {
+    margin-bottom: 6px;
+    color: #444;
+}
+
+code {
+    background-color: #e8e8e8;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+/* =====================
+   CARDS (Código 1)
+   ===================== */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 16px 0;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    flex: 1 1 280px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.card-title {
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* =====================
+   DEFINICIONES (Código 1)
+   ===================== */
+.def {
+    background-color: #eef4fb;
+    border-left: 4px solid #4a90d9;
+    padding: 14px 18px;
+    border-radius: 6px;
+    margin: 16px 0;
+}
+
+.def strong {
+    display: block;
+    font-size: 1rem;
+    color: #1a1a2e;
+    margin-bottom: 6px;
+}
+
+/* =====================
+   ESTADOS DE PROCESO (Código 1)
+   ===================== */
+.states {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 16px 0;
+}
+
+.state {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px 16px;
+    display: flex;
+    flex-direction: column;
+    min-width: 140px;
+}
+
+.state span {
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+.state em {
+    font-style: normal;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* =====================
+   TABLA (Código 1)
+   ===================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    background: #fff;
+}
+
+th {
+    background-color: #1a1a2e;
+    color: #fff;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #ddd;
+    color: #444;
+    font-size: 0.9rem;
+}
+
+tr:hover td {
+    background-color: #f0f6ff;
+}
+
+/* =====================
+   BOXES (Código 2)
+   ===================== */
+#especificacion {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.box {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 18px;
+    flex: 1 1 280px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.box h2 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: #1a1a2e;
+}
+
+.bullet {
+    padding-left: 18px;
+}
+
+.bullet li {
+    margin-bottom: 6px;
+}
+
+/* =====================
+   PILARES (Código 2)
+   ===================== */
+#Pilares-seccion {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.Pilares {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1 1 260px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.Pilares h2 {
+    margin: 12px 0 8px;
+    color: #1a1a2e;
+}
+
+.centro {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* =====================
+   CONTENEDOR GENERAL (Código 2)
+   ===================== */
+.General {
+    margin-bottom: 24px;
+}
+
+.contenedor {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.texto {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.texto p {
+    flex: 1 1 300px;
+}
+
+.dire {
+    width: 200px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+/* =====================
+   SISTEMAS OPERATIVOS (Código 3)
+   ===================== */
+#SO-0,
+#SO-1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+#server,
+#workstation,
+#S1, #S2, #S3 {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1 1 300px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+#S3-1 {
+    background: #f0f6ff;
+    border: 1px solid #c5d9f0;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 20px;
+}
+
+.title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 10px;
+}
+
+.definition,
+.description {
+    color: #444;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.characteristics,
+.types,
+.common-commands,
+.examples {
+    padding-left: 18px;
+    margin-bottom: 10px;
+}
+
+.item {
+    margin-bottom: 5px;
+    color: #444;
+    font-size: 0.9rem;
+}
+
+.sub-heading {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #4a90d9;
+    margin: 12px 0 6px;
+}
+
+/* =====================
+   EMULADORES (Código 3)
+   ===================== */
+#Emuladores {
+    margin-bottom: 40px;
+}
+
+#imagenes-container {
+    margin-top: 20px;
+}
+
+#imagenes-container h2 {
+    margin-bottom: 12px;
+}
+
+.emuladores-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 6px;
+    margin: 10px 0;
+    display: block;
+}
+
+#imagenes-container a,
+.link-emulador {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: #4a90d9;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+#imagenes-container a:hover,
+.link-emulador:hover {
+    text-decoration: underline;
+}
+
+/* =====================
+   FOOTER
+   ===================== */
+footer {
+    background-color: #1a1a2e;
+    color: #aaa;
+    text-align: center;
+    padding: 18px 24px;
+    margin-top: 48px;
+    font-size: 0.85rem;
+}
+
+footer a {
+    color: #4a90d9;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
