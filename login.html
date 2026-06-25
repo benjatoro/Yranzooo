@@ -3,29 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>Login</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Computer Science IB</h1>
+        <h1>LOGIN</h1>
     </header>
     <nav>
         <ul>
-            <li><a href="inicio.html" class="activo">Inicio</a></li>
+            <li><a href="inicio.html">Inicio</a></li>
             <li><a href="compuertas.html">Compuertas lógicas</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="login.html" class="activo">Login</a></li>
             <li><a href="computational.html">Pensamiento Computacional</a></li>
             <li><a href="rolso.html">Rol del sistema operativo</a></li>
             <li><a href="funcionesdelso.html">Funciones del sistema operativo</a></li>
         </ul>
     </nav>
     <main>
-        <h1>Bienvenido</h1>
-        <p>Seleccioná una sección del menú para comenzar.</p>
+        <form action="/action_page.php">
+            <label for="fname">Nombre:</label><br>
+            <input type="text" id="fname" name="fname" value="John"><br>
+            <label for="lname">Apellido:</label><br>
+            <input type="text" id="lname" name="lname" value="Doe"><br><br>
+            <input type="submit" value="Enviar">
+        </form>
     </main>
     <footer>
-        <p>Por: Yranzo</p>
+        <p>by yranzo</p>
     </footer>
 </body>
 </html>
